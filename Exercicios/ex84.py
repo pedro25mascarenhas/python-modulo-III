@@ -1,30 +1,41 @@
-from operator import itemgetter
+pessoas_cadastradas = list()
+pessoas_mais_pesadas = list()
+pessoas_mais_leves = list()
 
-nome_peso = list()
-lista_pessoas = list()
+pessoa = list()
+
+peso_pessoa_pesada = 0
+peso_pessoa_leve = 1000000
+
 while True:
-  nome_peso = input().split()
-  lista_pessoas.append(nome_peso[:])
-  continuar = input('Quer continuar S/N? ').strip().upper()
-  if continuar == 'N':
+  pessoa.append(input('Nome: '))
+  pessoa.append(float(input('Peso: ')))
+
+  quer_continuar = input('Quer continuar S/N? ').upper()
+
+  if pessoa[1] > peso_pessoa_pesada:
+    pessoas_mais_pesadas.clear()
+    peso_pessoa_pesada = pessoa[1]
+    pessoas_mais_pesadas.append(pessoa[0])
+  elif pessoa[1] == peso_pessoa_pesada:
+    pessoas_mais_pesadas.append(pessoa[0])
+
+  if pessoa[1] < peso_pessoa_leve:
+    pessoas_mais_leves.clear()
+    peso_pessoa_leve = pessoa[1]
+    pessoas_mais_leves.append(pessoa[0])
+  elif pessoa[1] == peso_pessoa_leve:
+    pessoas_mais_leves.append(pessoa[0])
+    
+  if quer_continuar[0] == 'N':
     break
-print('\n')
+  pessoas_cadastradas.append(pessoa[:])
+  
+  pessoa.clear()
 
-print(f'A) Pessoas cadastradas: {len(lista_pessoas)}')
-lista_pessoas.sort(key=itemgetter(1), reverse=True)
-
-print('B) Mais pesados: ', end='')
-for c in range(len(lista_pessoas)//2):
-  if c == len(lista_pessoas)//2:
-    print(f'{lista_pessoas[c][0]} com {lista_pessoas[c][1]}kg')
-  else:
-    print(f'{lista_pessoas[c][0]} com {lista_pessoas[c][1]}kg', end=' | ')
+quantidade_pessoas_cadastradas = len(pessoas_cadastradas)
+print(f'Ao todo você cadastrou {quantidade_pessoas_cadastradas} pessoas.' )
 
 
-lista_pessoas.sort(key=itemgetter(1), reverse=False)
-
-print('C) Mais leves: ', end='')
-for c in range(len(lista_pessoas)//2):
-  print(f'{lista_pessoas[c][0]} com {lista_pessoas[c][1]}kg', end=' | ')
-
-
+print(f'O maior peso foi de {peso_pessoa_pesada}kg. Peso de {pessoas_mais_pesadas}')
+print(f'O maior peso foi de {peso_pessoa_leve}kg. Peso de {pessoas_mais_leves}')
