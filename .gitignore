@@ -1,0 +1,124 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# CPython
+*.pyc
+*.pyo
+*.pyd
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+env1/
+env2/
+
+# IDEs
+.idea/
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Compiled Python modules
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and temp files
+*.log
+*.pot
+*.err
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Django
+*.log
+db.sqlite3
+*.sqlite3
+*.pyc
+local_settings.py
+
+# Flask
+instance/
+.webassets-cache
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Coveralls
+.coverage
+.coverage.*
+
+# Translations
+*.mo
+*.pot
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Distutils
+build/
+dist/
+*.egg-info/
+
+# setuptools
+*.egg
+
+# pip
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyInstaller
+*.spec
+
+# mypy
+.mypy_cache/
+
+# Pyre
+.pyre/
+
+# Python Profiling
+.prof
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# Robot Framework
+output.xml
+report.html
